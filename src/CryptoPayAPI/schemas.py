@@ -113,20 +113,20 @@ class Invoice(BaseModel):
     asset: Assets
     amount: Decimal
     pay_url: str
-    description: Optional[str]
+    description: Optional[str] = None
     created_at: datetime
     allow_comments: bool
     allow_anonymous: bool
-    expiration_date: Optional[datetime]
-    paid_at: Optional[datetime]
-    paid_anonymously: Optional[bool]
-    comment: Optional[str]
-    hidden_message: Optional[str]
-    payload: Optional[str]
-    paid_btn_name: Optional[PaidButtonNames]
-    paid_btn_url: Optional[str]
-    fee: Optional[Decimal]
-    usd_rate: Optional[Decimal]
+    expiration_date: Optional[datetime] = None
+    paid_at: Optional[datetime] = None
+    paid_anonymously: Optional[bool] = None
+    comment: Optional[str] = None
+    hidden_message: Optional[str] = None
+    payload: Optional[str] = None
+    paid_btn_name: Optional[PaidButtonNames] = None
+    paid_btn_url: Optional[str] = None
+    fee: Optional[Decimal] = None
+    usd_rate: Optional[Decimal] = None
 
 
 class Transfer(BaseModel):
@@ -147,7 +147,7 @@ class Transfer(BaseModel):
     amount: Decimal
     status: Literal['completed']
     completed_at: datetime
-    comment: Optional[str]
+    comment: Optional[str] = None
 
 
 class Application(BaseModel):
@@ -206,7 +206,7 @@ class Currency(BaseModel):
     is_fiat: bool
     name: str
     code: str
-    url: Optional[str]
+    url: Optional[str]= None
     decimals: int
 
 
